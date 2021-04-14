@@ -1,0 +1,31 @@
+﻿@model WebApplication1.Storege.Entity.Hobby
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Удалить описание</title>
+    <style>
+        body {
+            background: #ee8ce9 /* Цвет фона */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Del", "Hobby", FormMethod.Post))
+        {
+            <input id="StudentId" name="StudentId" type="hidden" value="@Model.Id" />
+            <lable> описание: </lable>
+            <input id="hobby" type="text" name="hobby" value="@Model.hobby" /><br /><br />
+            <input type="submit" value="del" />
+        }
+        @Html.ActionLink("Nazad", "ShowHobby", "Hobby")
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿@model WebApplication1.Manager.Hobbys.CreateHobby
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>описание книги</title>
+    <style>
+        body {
+            background: #ee8ce9 /* Цвет фона */
+        }
+    </style>
+</head>
+<body>
+    @using (Html.BeginForm("create", "Hobby", FormMethod.Post))
+    {
+
+    <lable> описание: </lable>
+        <input id="hobby" type="text" name="hobby" /><br /><br />
+        <input type="submit" value="add description" />
+
+    }
+    @Html.ActionLink("Nazad", "ShowHobby")
+</body>
+</html>
+

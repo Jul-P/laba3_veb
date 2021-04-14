@@ -1,0 +1,31 @@
+﻿@model WebApplication1.Storege.Entity.Stependia
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Удалить жанр книги</title>
+    <style>
+        body {
+            background: #ee8ce9 /* Цвет фона */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Del", "Stependia", FormMethod.Post))
+        {
+            <input id="StudentId" name="StudentId" type="hidden" value="@Model.Id" />
+            <lable> Жанр книги: </lable>
+            <input id="Kek" type="text" name="Kek" value="@Model.Kek" /><br /><br />
+            <input type="submit" value="del" />
+        }
+        @Html.ActionLink("Nazad", "ShowStependia", "Stependia")
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<WebApplication1.Storege.Entity.Stependia>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Показать Жанр</title>
+    <style>
+        body {
+            background: #ee8ce9 /* Цвет фона */
+        }
+    </style>
+</head>
+<body>
+    <h1>Жанр книги</h1>
+    <div>
+        @foreach (var item in Model)
+        {
+        <label>Жанр</label>
+
+            @item.Kek
+            <a href="/Stependia/UpdateStependia/@item.Id">Update</a>
+            <a href="/Stependia/DelStependia/@item.Id">Del</a><br />
+
+        }
+        @using (Html.BeginForm("AddStependia", "Stependia"))
+        {
+            <div>
+                <input type="submit" value="add" />
+            </div>
+        }
+        @Html.ActionLink("Nazad", "ShowStudent", "Student")
+
+
+    </div>
+</body>
+</html>

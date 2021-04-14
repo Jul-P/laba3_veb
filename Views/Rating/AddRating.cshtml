@@ -1,0 +1,29 @@
+﻿@model WebApplication1.Manager.Ratings.CreateRating
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Автор книги</title>
+    <style>
+        body {
+            background: #ee8ce9 /* Цвет фона */
+        }
+    </style>
+</head>
+<body>
+    @using (Html.BeginForm("create", "Rating", FormMethod.Post))
+    {
+
+        <lable> Автор: </lable>
+        <input id="Result" type="text" name="Result" /><br /><br />
+        <input type="submit" value="add autor" />
+
+    }
+    @Html.ActionLink("Nazad", "ShowRating")
+</body>
+</html>

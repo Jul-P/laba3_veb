@@ -1,0 +1,31 @@
+﻿@model WebApplication1.Storege.Entity.Rating
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Изменить автора</title>
+    <style>
+        body {
+            background: #ee8ce9 /* Цвет фона */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Update", "Rating", FormMethod.Post))
+        {
+            <input id="StudentId" name="StudentId" type="hidden" value="@Model.Id" />
+            <lable> Автор: </lable>
+            <input id="Result" type="text" name="Result" value="@Model.Result" /><br /><br />
+            <input type="submit" value="Up" />
+        }
+        @Html.ActionLink("Nazad", "ShowRating", "Rating")
+
+    </div>
+</body>
+</html>

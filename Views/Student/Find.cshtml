@@ -1,0 +1,38 @@
+﻿@model IEnumerable<WebApplication1.Storege.Entity.Student>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Find</title>
+    <style>
+        body {
+            background: #ee8ce9 /* Цвет фона */
+        }
+    </style>
+</head>
+<body>
+    @foreach (var item in Model)
+    {
+        @item.Name<br />
+    }
+    <br />
+    @using (Html.BeginForm("Index", "Student", FormMethod.Post))
+    {
+        <div>
+            <p>
+
+                Find by name:
+                <input id="Name" type="text" name="Name" /><br /><br />
+                <input type="submit" value="Search" />
+               
+            </p>
+        </div>
+    }
+
+</body>
+</html>

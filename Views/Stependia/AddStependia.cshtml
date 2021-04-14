@@ -1,0 +1,29 @@
+﻿@model WebApplication1.Manager.Stependias.CreateStependia
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Жанр киниги</title>
+    <style>
+        body {
+            background: #ee8ce9 /* Цвет фона */
+        }
+    </style>
+</head>
+<body>
+    @using (Html.BeginForm("create", "Stependia", FormMethod.Post))
+    {
+
+        <lable> Жанр: </lable>
+        <input id="Kek" type="text" name="Kek" /><br /><br />
+        <input type="submit" value="add Stependia" />
+
+    }
+    @Html.ActionLink("Nazad", "ShowStependia")
+</body>
+</html>

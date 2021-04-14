@@ -1,0 +1,29 @@
+﻿@model WebApplication1.Manager.Students.CreateOrUpdateStudent
+ @{
+   Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Добавить Книгу</title>
+    <style>
+        body {
+            background: #ee8ce9 /* Цвет фона */
+        }
+    </style>
+</head>
+<body>
+    @using (Html.BeginForm("create", "Student", FormMethod.Post))
+    {
+
+        <lable> Книга: </lable>
+        <input id="Name" type="text" name="Name" /><br /><br />
+        <input type="submit" value="add book" />
+
+    }
+    @Html.ActionLink("Nazad", "ShowStudent")
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WebApplication1.Storege.Entity.Group>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Показать библиотекаря</title>
+    <style>
+        body {
+            background: #ee8ce9 /* Цвет фона */
+        }
+    </style>
+</head>
+<body>
+    <h1>Библиотекарь</h1>
+    <div>
+        @foreach (var item in Model)
+        {
+            <label>Библиотекарь</label>
+
+            @item.Number
+            <a href="/Group/UpdateGroup/@item.Id">Update</a>
+            <a href="/Group/DelGroup/@item.Id">Del</a><br />
+
+        }
+        @using (Html.BeginForm("AddGroup", "Group"))
+        {
+            <div>
+                <input type="submit" value="add" />
+            </div>
+        }
+    </div>
+    @Html.ActionLink("Nazad", "ShowStudent","Student")
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebApplication1.Storege.Entity.Student>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Показать книгу</title>
+    <style>
+        body {
+            background: #ee8ce9 /* Цвет фона */
+        }
+    </style>
+</head>
+<body>
+    <h1>Название книги</h1>
+    <div>
+        @foreach (var item in Model)
+        {
+            <label>Книга</label>
+
+            @item.Name
+            <a href="/Student/UpdateStudent/@item.Id">Update</a>
+            <a href="/Student/DelStudent/@item.Id">Del</a><br />
+
+        }
+        @using (Html.BeginForm("AddStudent", "Student"))
+        {
+            <div>
+                <input type="submit" value="add" />
+            </div>
+        }
+
+
+        @Html.ActionLink("Find", "Find", "Student")
+        @Html.ActionLink("Grups", "ShowGroup", "Group")
+        @Html.ActionLink("Hobbys", "ShowHobby", "Hobby")
+        @Html.ActionLink("Ratings", "ShowRating", "Rating")
+        @Html.ActionLink("Stependia", "ShowStependia", "Stependia")
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿@model WebApplication1.Manager.Groups.CreateGroup
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Добавить Библиотекаря</title>
+    <style>
+        body {
+            background: #ee8ce9 /* Цвет фона */
+        }
+    </style>
+</head>
+<body>
+    @using (Html.BeginForm("create", "Group", FormMethod.Post))
+    {
+
+        <lable> Библиотекарь: </lable>
+        <input id="Number" type="text" name="Number" /><br /><br />
+        <input type="submit" value="add" />
+
+    }
+    @Html.ActionLink("Grups", "ShowGroup","Group")
+   
+</body>
+</html>

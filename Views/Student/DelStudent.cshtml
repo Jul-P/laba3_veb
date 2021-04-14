@@ -1,0 +1,31 @@
+﻿@model WebApplication1.Storege.Entity.Student
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Удалить книгу</title>
+    <style>
+        body {
+            background: #ee8ce9 /* Цвет фона */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Del", "Student", FormMethod.Post))
+        {
+            <input id="StudentId" name="StudentId" type="hidden" value="@Model.Id" />
+            <lable> Книга: </lable>
+            <input id="Name" type="text" name="Name" value="@Model.Name" /><br /><br />
+            <input type="submit" value="del" />
+        }
+        @Html.ActionLink("Nazad", "ShowStudent", "Student")
+
+    </div>
+</body>
+</html>
